@@ -71,3 +71,4 @@ eval $(thefuck --alias)
 
 
 
+export PATH="$PATH:/home/coolbit/.local/share/JetBrains/Toolbox/scripts"

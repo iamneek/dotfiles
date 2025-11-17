@@ -1,0 +1,43 @@
+// // Zed keymap
+// //
+// // For information on binding keys, see the Zed
+// // documentation: https://zed.dev/docs/key-bindings
+// //
+// // To see the default key bindings run `zed: open default keymap`
+// // from the command palette.
+// [
+//   {
+//     "context": "Workspace",
+//     "bindings": {
+//       // "shift shift": "file_finder::Toggle"
+//     }
+//   },
+//   {
+//     "context": "Editor && vim_mode == insert",
+//     "bindings": {
+//       // "j k": "vim::NormalBefore"
+//     }
+//   }
+// ]
+
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-l": "editor::Format",
+      "cmd-shift-r": "editor::Rename",
+      "alt-shift-down": "editor::DuplicateLineDown",
+      "alt-shift-up": "editor::DuplicateLineUp"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-1": "workspace::ToggleLeftDock",
+      "ctrl-2": "workspace::ToggleRightDock",
+      "ctrl-alt-r": ["task::Spawn", { "task_name": "r/python" }],
+      "ctrl-alt-shift-r": ["task::Spawn", { "task_name": "r/rust" }],
+      "ctrl-shift-t": "workspace::NewTerminal"
+    }
+  }
+]

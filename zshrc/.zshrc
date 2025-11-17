@@ -28,31 +28,6 @@ source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 
 
-# new_tmux () {
-#   session_dir=$(zoxide query --list | fzf)
-#   session_name=$(basename "$session_dir")
-#
-#   if tmux has-session -t $session_name 3>/dev/null; then
-#     if [ -n "$TMUX" ]; then
-#       tmux switch-client -t "$session_name"
-#     else
-#       tmux attach -t "$session_name"
-#     fi
-#     notification="tmux attached to $session_name"
-#   else
-#     if [ -n "$TMUX" ]; then
-#       tmux new-session -d -c "$session_dir" -s "$session_name" && tmux switch-client -t "$session_name"
-#       notification="new tmux session INSIDE TMUX: $session_name"
-#     else
-#       tmux new-session -c "$session_dir" -s "$session_name"
-#       notification="new tmux session: $session_name"
-#     fi
-#   fi
-#
-#   if [-s "$session_name" ]; then
-#     notify-send "$notification"
-#   fi
-# }
 
 # alias tm=new_tmux
 alias c=clear
@@ -63,12 +38,38 @@ alias zshconfig="vim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias fastf="fastfetch"
 alias grep="rg"
+alias hx="helix"
+alias gcam="git commit -am"
+alias gclone="git clone"
+alias zed="zeditor"
+alias coolgit="~/Code/Python/Other/GIT_from_scratch/codecrafters-git-python/your_program.sh"
+# alias charm="nohup pycharm"
+# alias idea="nohup idea"
+# alias studio="nohup studio"
 
 export FUNCNEST=2000
 eval "$(zoxide init zsh --cmd cd)"
 eval $(thefuck --alias)
-# Design
 
 
 
+
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/coolbit/.local/share/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$HOME/flutter/bin"
+export CHROME_EXECUTABLE=/usr/bin/chromium
+
+# Home brew - everything below till --- is added from bashrc
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+#
+. "$HOME/.cargo/env"
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH
+export PATH=$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator:$PATH
+#
+# . "$HOME/.local/share/../bin/env"
+# export PATH="$HOME/.local/bin:$PATH"
+# ---
